@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="Enter your description here" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Exemplo 1 JavaScript</title>
+    <style>
+        #div1 {
+            background-color: rgba(24, 204, 195, 0.575);
+        }
+        #div2 {
+            background-color: rgba(105, 167, 26, 0.575);
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+    <div class="container-sm">
+        <div class="alert alert-primary" role="alert">
+            <h2>O que JavaScript pode fazer?</h2>
+
+        </div>
+        <div>
+            <p id="pid">Com JavaScript podemos alterar o conteúdo de elementos HTML.</p>
+            <p>Neste exemplo usamos o JavaScript para Alterar o texto do parágrafo anterior</p>
+        </div>
+        <div class="form-group mb-3">
+            <button type="button"
+                onclick='document.getElementById("pid").innerHTML="O texto foi modificado pelo JavaScript!!!!"'
+                class="btn btn-primary form-control">Clique aqui!!!</button>
+        </div>
+        <div class="form-group bm-3">
+            <div class="alert alert-primary" role="alert">
+                <h2>Com JavaScript podemos alterar o estiço CSS de uma elemento HTML</h2>
+            </div>
+            <div id="div1" onclick="mudarCSS()">
+                <p>Neste exemplo vamos altear o estilo desta div.</p>
+                <p>Para realizar essa modificação basta clicar na div.</p>
+            </div>
+        </div>
+
+        <div class="form-group mb-3">
+            <div class="alert alert-warning" role="alert">
+                <p>Exemplo de mudança de estilo a partir de evento do mouse</p>
+            </div>
+            <div class="div2" onmouseover="mOver(this)" onmouseout="mOut(this)">
+                <h2>Exemplo do uso dos eventos JavaScript
+                    Mouse Over e Mouse Out</h2>
+                <p>Passe o mouse sobre essa div!!!</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        function mOver(obj){
+            obj.innerHTML="A div mudou de cor e tamanho de fonte";
+            obj.style.backgroundColor="#C133FF";
+            obj.style.fontSize="20px";
+        }
+        function mOut(obj){
+            obj.innerHTML="A div mudou de cor novamente";
+            obj.style.backgroundColor="#3371FF";
+            obj.style.fontSize="100px";
+        }
+
+
+        function mudarCSS() {
+            var elementoDiv = document.getElementById("div1");
+            elementoDiv.style.backgroundColor = "#FB7105";
+            elementoDiv.style.color = "black";
+            elementoDiv.style.textAlign = "center";
+            elementoDiv.style.padding = "100px";
+            elementoDiv.style.fontSize = "20px";
+            elementoDiv.style.innerHTML = "A div mudou o css e conteúdo via JavaScript";
+        }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>
